@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "br.com.checkmob.fast_trivia.fast_trivia",
+  "applicationId": "br.com.checkmob.fast_trivia",
   "variantName": "debug",
   "elements": [
     {

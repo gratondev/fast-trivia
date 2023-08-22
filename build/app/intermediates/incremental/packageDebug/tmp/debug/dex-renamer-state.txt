@@ -1,4 +1,4 @@
-#Tue Aug 22 09:57:03 BRT 2023
+#Tue Aug 22 13:52:04 BRT 2023
 base.0=C\:\\Users\\pedro.graton\\Documents\\flutter_projects\\fast_trivia\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

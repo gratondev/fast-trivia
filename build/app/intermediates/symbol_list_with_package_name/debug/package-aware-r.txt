@@ -1,4 +1,4 @@
-br.com.checkmob.fast_trivia.fast_trivia
+br.com.checkmob.fast_trivia
 attr activityAction
 attr activityName
 attr alpha

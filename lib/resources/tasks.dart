@@ -1,5 +1,6 @@
 import 'package:fast_trivia/data/task_dao.dart';
 import 'package:fast_trivia/models/question.dart';
+import 'package:fast_trivia/ui/pages/view_answer.dart';
 import 'package:flutter/material.dart';
 
 import '../ui/pages/check_answers.dart';
@@ -9,6 +10,7 @@ class Task extends StatefulWidget {
   final String total;
   final String corretas;
   final String erradas;
+  final String categoria;
   final String quiz;
   final String answers;
 
@@ -17,6 +19,7 @@ class Task extends StatefulWidget {
     this.total,
     this.corretas,
     this.erradas,
+    this.categoria,
     this.quiz,
     this.answers, [
     Key? key,
@@ -123,20 +126,6 @@ class _TaskState extends State<Task> {
                     ),
                     Row(
                       children: [
-                        SizedBox(
-                          height: 52,
-                          width: 52,
-                          child: ElevatedButton(
-                              onPressed: () {},
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: const [
-                                  Icon(Icons.remove_red_eye),
-                                ],
-                              )),
-                        ),
                         Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
                         SizedBox(
                           height: 52,
@@ -158,12 +147,18 @@ class _TaskState extends State<Task> {
                                   Icon(Icons.delete),
                                 ],
                               )),
-                        )
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                       ],
                     ),
                   ],
                 ),
               ),
+              Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+              Text(
+                widget.categoria,
+                style: TextStyle(color: Colors.white),
+              )
             ],
           ),
         ],

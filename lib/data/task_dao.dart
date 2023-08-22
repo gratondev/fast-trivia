@@ -8,6 +8,7 @@ class TaskDao {
       '$_total TEXT, '
       '$_corretas TEXT, '
       '$_erradas TEXT, '
+      '$_categoria TEXT, '
       '$_quiz TEXT, '
       '$_answers TEXT)';
 
@@ -16,6 +17,7 @@ class TaskDao {
   static const String _total = 'total';
   static const String _corretas = 'corretas';
   static const String _erradas = 'erradas';
+  static const String _categoria = 'categoria';
   static const String _quiz = 'quiz';
   static const String _answers = 'answers';
 
@@ -45,6 +47,7 @@ class TaskDao {
     mapaDeTarefas[_total] = tarefa.total;
     mapaDeTarefas[_corretas] = tarefa.corretas;
     mapaDeTarefas[_erradas] = tarefa.erradas;
+    mapaDeTarefas[_categoria] = tarefa.categoria;
     mapaDeTarefas[_quiz] = tarefa.quiz;
     mapaDeTarefas[_answers] = tarefa.answers;
 
@@ -70,6 +73,7 @@ class TaskDao {
         linha[_total],
         linha[_corretas],
         linha[_erradas],
+        linha[_categoria],
         linha[_quiz],
         linha[_answers],
       );

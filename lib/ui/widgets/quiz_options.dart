@@ -127,6 +127,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                 )));
         return;
       }
+
       Navigator.push(
           context,
           MaterialPageRoute(

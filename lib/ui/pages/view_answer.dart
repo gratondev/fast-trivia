@@ -1,20 +1,31 @@
-import 'package:fast_trivia/data/task_dao.dart';
-import 'package:fast_trivia/models/question.dart';
-import 'package:fast_trivia/resources/tasks.dart';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:html_unescape/html_unescape.dart';
 
-class CheckAnswersPage extends StatelessWidget {
-  final List<Question> questions;
-  final Map<int, dynamic> answers;
+class ViewAnswersPage extends StatelessWidget {
+  final String id;
+  final String total;
+  final String corretas;
+  final String erradas;
+  final String categoria;
+  final List array;
+  final String answers;
 
-  const CheckAnswersPage(
-      {Key? key, required this.questions, required this.answers})
-      : super(key: key);
+  const ViewAnswersPage({
+    Key? key,
+    required this.answers,
+    required this.id,
+    required this.total,
+    required this.corretas,
+    required this.erradas,
+    required this.categoria,
+    required this.array,
+  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
+  build(BuildContext context) {
+    var parseCode = jsonEncode(answers);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow.shade800,
@@ -32,7 +43,7 @@ class CheckAnswersPage extends StatelessWidget {
           ),
           ListView.builder(
             padding: const EdgeInsets.all(16.0),
-            itemCount: questions.length + 1,
+            itemCount: answers.length + 1,
             itemBuilder: _buildItem,
           )
         ],
@@ -41,7 +52,7 @@ class CheckAnswersPage extends StatelessWidget {
   }
 
   Widget _buildItem(BuildContext context, int index) {
-    if (index == questions.length) {
+    if (index == answers.length) {
       return ElevatedButton(
         child: Text("Finalizar"),
         onPressed: () {
@@ -50,8 +61,7 @@ class CheckAnswersPage extends StatelessWidget {
         },
       );
     }
-    Question question = questions[index];
-    bool correct = question.correctAnswer == answers[index];
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -59,7 +69,7 @@ class CheckAnswersPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              HtmlUnescape().convert(question.question!),
+              HtmlUnescape().convert(answers),
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -69,22 +79,11 @@ class CheckAnswersPage extends StatelessWidget {
             Text(
               HtmlUnescape().convert("${answers[index]}"),
               style: TextStyle(
-                  color: correct ? Colors.green : Colors.red,
+                  color: Colors.green,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5.0),
-            correct
-                ? Container()
-                : Text.rich(
-                    TextSpan(children: [
-                      TextSpan(text: "Answer: "),
-                      TextSpan(
-                          text: HtmlUnescape().convert(question.correctAnswer!),
-                          style: TextStyle(fontWeight: FontWeight.w500))
-                    ]),
-                    style: TextStyle(fontSize: 16.0),
-                  )
           ],
         ),
       ),

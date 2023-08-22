@@ -1,4 +1,3 @@
-import 'package:fast_trivia/models/question.dart';
 import 'package:fast_trivia/resources/tasks.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +9,16 @@ class TaskInherited extends InheritedWidget {
 
   final List<Task> taskList = [];
 
-  void newTask(String id, String total, String corretas, String erradas,
-      String questions, String answers) {
-    taskList.add(Task(id, total, corretas, erradas, questions, answers));
+  void newTask(
+    String id,
+    String total,
+    String corretas,
+    String erradas,
+    String categoria,
+    String quiz,
+    String answers,
+  ) {
+    taskList.add(Task(id, total, corretas, erradas, categoria, quiz, answers));
   }
 
   static TaskInherited of(BuildContext context) {

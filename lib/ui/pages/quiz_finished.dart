@@ -1,6 +1,5 @@
-import 'dart:convert';
-
 import 'package:fast_trivia/data/task_dao.dart';
+import 'package:fast_trivia/models/category.dart';
 import 'package:fast_trivia/models/question.dart';
 import 'package:fast_trivia/resources/tasks.dart';
 import 'package:fast_trivia/ui/pages/check_answers.dart';
@@ -9,11 +8,13 @@ import 'package:flutter/material.dart';
 class QuizFinishedPage extends StatefulWidget {
   final List<Question> questions;
   final Map<int, dynamic> answers;
+  final Category? category;
 
   QuizFinishedPage({
     Key? key,
     required this.questions,
     required this.answers,
+    required this.category,
   }) : super(key: key);
 
   @override
@@ -115,12 +116,14 @@ class _QuizFinishedPageState extends State<QuizFinishedPage> {
                       ),
                       child: Text("Voltar para home"),
                       onPressed: () {
+                        ;
                         TaskDao().save(Task(
                           DateTime.now().millisecondsSinceEpoch.toString(),
                           "${widget.questions.length}",
                           "$correct/${widget.questions.length}",
                           "${widget.questions.length - correct}/${widget.questions.length}",
-                          "${widget.questions}",
+                          "${widget.category!.name}",
+                          "${widget.questions.toString()}",
                           "${widget.answers}",
                         ));
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -153,7 +156,8 @@ class _QuizFinishedPageState extends State<QuizFinishedPage> {
                           "${widget.questions.length}",
                           "$correct/${widget.questions.length}",
                           "${widget.questions.length - correct}/${widget.questions.length}",
-                          "${widget.questions}",
+                          "${widget.category!.name}",
+                          "${widget.questions.toList()}",
                           "${widget.answers}",
                         ),
                       );

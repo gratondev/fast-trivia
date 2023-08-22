@@ -143,7 +143,11 @@ class _QuizPageState extends State<QuizPage> {
     } else {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (_) => QuizFinishedPage(
-              questions: widget.questions, answers: _answers)));
+                questions: widget.questions,
+                answers: _answers,
+                category: widget.category!,
+              )));
+      print(widget.category!.name);
     }
   }
 
@@ -153,17 +157,17 @@ class _QuizPageState extends State<QuizPage> {
         builder: (_) {
           return AlertDialog(
             content: Text(
-                "Are you sure you want to quit the quiz? All your progress will be lost."),
-            title: Text("Warning!"),
+                "Você deseja sair do quiz? Todas as respostas serão perdidas"),
+            title: Text("Atenção!"),
             actions: <Widget>[
               TextButton(
-                child: Text("Yes"),
+                child: Text("Sim"),
                 onPressed: () {
                   Navigator.pop(context, true);
                 },
               ),
               TextButton(
-                child: Text("No"),
+                child: Text("Não"),
                 onPressed: () {
                   Navigator.pop(context, false);
                 },
