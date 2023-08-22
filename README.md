@@ -26,4 +26,5 @@ O projeto consiste em um quiz que consome um Mock API, e retorna se o resultados
 
 - Ter uma IDE instalada na sua máquina
 - Ter a [SDK do Flutter](https://docs.flutter.dev/get-started/install) na versão 3.0.0
+- Rodar o projeto para emulador ou dispositivo físico android
 
