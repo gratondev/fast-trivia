@@ -1,16 +1,18 @@
-# fast_trivia
 
-A new Flutter project.
+# Checkmob: Fast Trivia
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## 🔨 Projeto: Fast Trivia
 
-A few resources to get you started if this is your first Flutter project:
+O projeto consiste em um quiz que consome um Mock API, e retorna se o resultados foram corretos ou errados, mostrando ao final a lista de respostas e pontuações.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![](https://user-images.githubusercontent.com/22684176/180311121-619bd614-b439-4177-ae2c-9b9d79368002.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 🛠️ Abrir e rodar o projeto
+
+**Para executar este projeto você precisa:**
+
+- Ter uma IDE instalada na sua máquina
+- Ter a [SDK do Flutter](https://docs.flutter.dev/get-started/install) na versão 3.0.0
+
