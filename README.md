@@ -8,13 +8,12 @@ O projeto consiste em um quiz que consome um Mock API, e retorna se o resultados
 
 
 <p float="left">
-<img src="assets/screen%20(1).jpg" width="100" />
-<img src="assets/screen%20(2).jpg" width="100" />
-<img src="assets/screen%20(3).jpg" width="100" />
-<img src="assets/screen%20(4).jpg" width="100" />
-<img src="assets/screen%20(5).jpg" width="100" />
-<img src="assets/screen%20(6).jpg" width="100" />
-<img src="assets/screen%20(7).jpg" width="100" />
+<img src="assets/screen%20(1).jpg" width="120" />
+<img src="assets/screen%20(2).jpg" width="120" />
+<img src="assets/screen%20(3).jpg" width="120" />
+<img src="assets/screen%20(4).jpg" width="120" />
+<img src="assets/screen%20(5).jpg" width="120" />
+<img src="assets/screen%20(6).jpg" width="120" />
 </p>
 
 
